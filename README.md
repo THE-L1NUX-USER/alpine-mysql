@@ -13,7 +13,7 @@ docker build -f Dockerfile . -t vo1dbin/alpine-mysql-amd64
 For arm64 based platforms
 
 ```bash
-docker build -f Dockerfile-amd64 . -t vo1dbin/alpine-mysql-arm64
+docker build -f Dockerfile-arm64 . -t vo1dbin/alpine-mysql-arm64
 ```
 
 # How to start a container
