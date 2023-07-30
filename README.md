@@ -21,9 +21,9 @@ docker build -f Dockerfile-arm64 . -t vo1dbin/alpine-mysql-arm64 --platform linu
 To start the server without creating an initial user/database:
 
 ```
-docker run -it --rm \
+docker run -d -it --restart always\
   --name mysql \
-  -v $(pwd):/data \
+  -v ./mysql_data:/data \
   -p 3306:3306 \
   vo1dbin/alpine-mysql
 ```
@@ -33,10 +33,10 @@ OR
 To start the server and create an initial user, database and specify root password:
 
 ```
-docker run -it --rm \
+docker run -d -it --restart always \
    --name mysql \
    -p 3306:3306 \
-   -v $(pwd):/data \
+   -v ./mysql_data:/data \
    -e MYSQL_DATABASE=my_db \
    -e MYSQL_USER=user \
    -e MYSQL_PASSWORD=passwd \
@@ -49,9 +49,9 @@ docker run -it --rm \
 Once the container is running, run:
 
 ```
-docker exec -it mysql sh
+docker exec -it mysql mysql -u root -p
 ```
 
-to connect, then type:  `` mysql -u root -p``
+Enter password to connect
 
 
