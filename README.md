@@ -1,4 +1,4 @@
-A minimal lightweight mysql docker image based on alpine with mysql 
+A minimal lightweight mysql docker image based on alpine
 
 # How to build image
 
@@ -7,13 +7,13 @@ A minimal lightweight mysql docker image based on alpine with mysql
 For amd64 based platforms
 
 ```bash
-docker build -f Dockerfile . -t vo1dbin/alpine-mysql-amd64 
+docker build -f Dockerfile . -t vo1dbin/alpine-mysql-amd64 --platform linux/amd64
 ```
 
 For arm64 based platforms
 
 ```bash
-docker build -f Dockerfile-arm64 . -t vo1dbin/alpine-mysql-arm64
+docker build -f Dockerfile-arm64 . -t vo1dbin/alpine-mysql-arm64 --platform linux/arm64
 ```
 
 # How to start a container
